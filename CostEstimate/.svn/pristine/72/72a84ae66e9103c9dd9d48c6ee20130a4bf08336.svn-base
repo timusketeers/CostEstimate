@@ -1,0 +1,6 @@
+JVM中的Class只有满足以下三个条件，才能被GC回收，也就是该Class被卸载（unload）：
+   - 该类所有的实例都已经被GC，也就是JVM中不存在该Class的任何实例。
+   - 加载该类的ClassLoader已经被GC。
+   - 该类的java.lang.Class 对象没有在任何地方被引用，如不能在任何地方通过反射访问该类的方法.
+   
+   classloader包下面的代码很好的说明了这一点.
